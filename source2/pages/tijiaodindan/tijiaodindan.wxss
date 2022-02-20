@@ -1,0 +1,67 @@
+/* pages/tijiaodindan/tijiaodindan.wxss */
+Page{
+  background: #f5f5f5;
+}
+.padding{
+  padding: 20rpx 0 20rpx 0;
+  margin: 0 20rpx 0 20rpx;
+}
+.carimg {
+  width: 260rpx;
+  height: 110rpx;
+}
+
+.label{
+  width: 90rpx;
+height: 32rpx;
+text-align: center;
+line-height: 32rpx;
+background: #FED781;
+border-radius: 16rpx;
+}
+.check{
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.label2 {
+  padding: 0 10rpx 0 10rpx; 
+  background: #000000;
+  color: white;
+  font-size: 22rpx;
+  border-radius: 18rpx;
+}
+.shouquan{
+  padding: 4rpx 10rpx 4rpx 10rpx; 
+  background: #000000;
+  color: white;
+  font-size: 18rpx;
+  border-radius: 18rpx;
+}
+.weixin{
+  width: 42rpx;
+height: 42rpx; 
+}
+.yue{
+  width: 42rpx;
+height: 42rpx;
+}
+
+.queren{
+  width: 300rpx;
+height: 54rpx;
+line-height: 54rpx;
+color: white;
+text-align: center;
+background: #000000;
+border-radius: 28rpx;
+}
+
+.line{
+  width: 8rpx;
+height: 26rpx;
+margin-top: 4rpx;
+background: #000000;
+border-radius: 4rpx;
+margin-right: 10rpx;
+}

@@ -1,0 +1,7 @@
+/* pages/yijian/yijian.wxss */
+.text{ 
+height: 248rpx;
+width: 100%;
+background: #F5F5F5;
+border-radius: 10rpx;
+}

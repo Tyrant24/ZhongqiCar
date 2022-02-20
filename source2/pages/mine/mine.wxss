@@ -1,0 +1,117 @@
+/* pages/mine/mine.wxss */
+Page {
+  background: #F5F5F5;
+}
+
+.topblock {
+  background: black;
+  padding: 60rpx 20rpx 20rpx 20rpx;
+}
+
+.label {
+  width: 184rpx;
+  height: 40rpx;
+  /* padding-right: 20rpx; */
+}
+.margin-left-50{
+  margin-left: 50rpx;
+}
+
+.tiao {
+  width: 2rpx;
+  height: 50rpx;
+  background: #F5F5F5;
+}
+
+.label2 {
+  text-align: center;
+  width: 140rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border: 2rpx solid #F5F5F5;
+  border-radius: 20rpx;
+}
+
+.qianbao {
+  width: 48rpx;
+  height: 46rpx;
+}
+
+.under_white {
+  background: #F5F5F5;
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+  margin-top: -40rpx;
+}
+
+.xuanchuan {
+  position: absolute;
+  top: 0rpx;
+  width: 530rpx;
+  height: 60rpx;
+  padding: 0 10rpx 0 20rpx;
+  line-height: 60rpx;
+  background: #000000;
+  box-shadow: -1rpx 4rpx 14rpx 2rpx rgba(52, 25, 78, 0.5);
+  border-radius: 30rpx;
+
+}
+
+.btn {
+  width: 130rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+
+}
+
+.mid { 
+  height: 140rpx;
+  width: 100%;
+  padding-top: 60rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 4rpx 14rpx 2rpx rgba(19, 21, 42, 0.1);
+  border-radius: 20rpx;
+}
+
+.fenxiao {
+  position: relative;
+  padding-top: 40rpx;
+
+}
+.icon-qudao{
+  width: 60rpx;
+height: 58rpx;
+}
+.xinwen{
+  padding: 20rpx 0 20rpx 0;
+  margin: 0 20rpx 0 20rpx;
+  border-top:2rpx solid #E6E6E6;
+}
+
+.queren { 
+  /* background: #4E6D45; */
+  /* border-radius: 37rpx; */
+  color: #02BB00;
+  font-size: 34rpx; 
+  text-align: center;
+}
+
+.allblock{
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 100; 
+  /* background: #03bb0079; */
+}
+.kefu{
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 2%;
+  top: 70%;
+  z-index: 30;
+}

@@ -1,0 +1,19 @@
+<!--pages/tijiaochengon/tijiaochengon.wxml-->
+
+<view class=" flex-row flex-column text-center">
+
+<image src="{{uploadpath}}resource/{{res.chengon}}" class="img margin-top-60 margin-right-60"></image>
+
+<view class="f-36 margin-top-20">提现提交成功</view>
+
+<view class="h5 txt-gray margin-top-20">感谢您对我们的信任</view>
+<view class="h5 txt-gray margin-top-20">我们将在1-2个工作日内完成提现流程！</view>
+
+<view class="flex-row flex-center margin-top-60">
+  <view class="flex-1"></view>
+  <view class="backhome h6" bindtap="backHome">返回首页</view> 
+  <view class="flex-1"></view>
+</view>
+
+<!-- checkInDate=2021-04-07&checkOutDate=2021-04-15&taketime=08:00&stilltime=08:00&model_id=3&tianshu=8 -->
+</view>

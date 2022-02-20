@@ -1,0 +1,4 @@
+/* pages/jiangli/jiangli.wxss */
+.padding{
+  padding: 34rpx 24rpx 34rpx 24rpx;
+}

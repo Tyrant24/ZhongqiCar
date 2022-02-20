@@ -1,0 +1,164 @@
+<!--pages/qianbao/qianbao.wxml-->
+<view class="bg-black padding">
+
+  <view bindtap="navtoPage" data-page='tixianjilu' class="text-right txt-white padding-right-30 padding-bottom-20 h6">
+    提现记录</view>
+
+  <view class="flex-row flex-center margin-top">
+    <view class="flex-row flex-column flex-1">
+      <view class="h6 txt-white">{{walletinfo.balance}}</view>
+      <view class="h6 txt-white margin-top-20">余额</view>
+    </view>
+    <view class="tiao"></view>
+    <view class="flex-row flex-column flex-1">
+      <view class="h6 txt-white">{{walletinfo.yajing}}</view>
+      <view class="h6 txt-white margin-top-20">押金</view>
+    </view>
+    <view class="tiao"></view>
+    <view class="flex-row flex-column flex-1">
+      <view class="h6 txt-white">{{walletinfo.commission}}</view>
+      <view class="h6 txt-white margin-top-20">推荐奖励</view>
+    </view>
+    <view class="tiao"></view>
+    <view class="flex-row flex-column flex-1">
+      <view class="h6 txt-white">{{walletinfo.rent}}</view>
+      <view class="h6 txt-white margin-top-20">经销利润</view>
+    </view>
+  </view>
+
+  <view class="flex-row flex-column margin-top-80">
+    <view class="tixian txt-bold h4-5" bindtap="navtoPage" data-page="tixian">提现</view>
+  </view>
+
+</view>
+
+<view class="flex-row  padding-top-20 bg-white">
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="0">
+    <view class="{{checking==0?'txt-default':''}} h5">余额</view>
+    <view class="checkblock {{checking==0?'bg-default':''}}  margin-top-20"></view>
+  </view>
+
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="1">
+    <view class="{{checking==1?'txt-default':''}} h5">押金</view>
+    <view class="checkblock {{checking==1?'bg-default':''}} margin-top-20"></view>
+  </view>
+
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="2">
+    <view class="{{checking==2?'txt-default':''}} h5">推荐奖励</view>
+    <view class="checkblock {{checking==2?'bg-default':''}} margin-top-20"></view>
+  </view>
+
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="3">
+    <view class="{{checking==3?'txt-default':''}} h5">经销利润</view>
+    <view class="checkblock {{checking==3?'bg-default':''}} margin-top-20"></view>
+  </view>
+</view>
+
+<scroll-view scroll-y class="mgincon">
+  <view class="margin-top-5 padding-bottom-24" wx:if="{{checking==0}}">
+    <view class="padding-24-nobottom" wx:for="{{balancerecord}}" wx:key="k">
+      <view class="padding-24  bg-white">
+        <view class="flex-row flex-center ">
+          <view class="h6 flex-1" wx:if="{{item.type=='A'}}">充值金额</view>
+          <view class="h6 flex-1" wx:if="{{item.type=='E'}}">退款金额</view>
+          <view class="h6 flex-1" wx:if="{{item.type=='ZF'}}">租车抵扣</view>
+          <view class="h6 {{item.amount>0?'txt-red':'txt-green'}} ">￥{{item.amount}}</view>
+        </view>
+        <view class="flex-row flex-center  margin-top-5">
+          <view class="h6 flex-1" wx:if="{{item.type=='A'}}">充值时间</view>
+          <view class="h6 flex-1" wx:if="{{item.type=='E'}}">退款时间</view>
+          <view class="h6 flex-1" wx:if="{{item.type=='ZF'}}">租车时间</view>
+          <view class="h6 ">{{item.dtime_formatting}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="text-center" wx:if="{{balancerecord.length==0}}">
+      <image src="{{uploadpath}}resource/{{res.onrecord}}" class="norecord" />
+      <view class="h6 txt-gray">暂无数据</view>
+    </view>
+  </view>
+
+  <view class="margin-top-5 padding-bottom-24" wx:if="{{checking==1}}">
+    <view class="padding-24-nobottom" wx:for="{{yajingrecord}}" wx:key="k">
+      <view class="padding-24  bg-white">
+        <view class="flex-row flex-center ">
+          <view class="h6 flex-1" wx:if="{{item.type=='Y'}}">押金金额</view>
+          <view class="h6 flex-1" wx:if="{{item.type=='TY'}}">退押金额</view>
+          <view class="h6 {{item.amount>0?'txt-red':'txt-green'}}">￥{{item.amount}}</view>
+        </view>
+        <view class="flex-row flex-center margin-top-5">
+          <view class="h6 flex-1" wx:if="{{item.type=='A'}}">交押时间</view>
+          <view class="h6 flex-1" wx:if="{{item.type=='E'}}">退押时间</view>
+          <view class="h6 ">{{item.dtime_formatting}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="text-center" wx:if="{{yajingrecord.length==0}}">
+      <image src="{{uploadpath}}resource/{{res.onrecord}}" class="norecord" />
+      <view class="h6 txt-gray">暂无数据</view>
+    </view>
+  </view>
+  <view class="margin-top-5 padding-bottom-24" wx:if="{{checking==2}}">
+    
+    <view class="padding-24-nobottom" wx:for="{{commissionrecord}}" wx:key="k">
+      <view class="padding-24  bg-white">
+        <view class="flex-row flex-center ">
+          <view class="h6 flex-1" >名称</view>
+          <view class="h6 ">{{item.relwallet_name!=''?item.relwallet_name:item.relwallet_nickName}}</view>
+        </view>
+        <view class="flex-row flex-center  margin-top-5">
+          <view class="h6 flex-1" >充值金额</view>
+          <view class="h6 ">￥{{item.relwallet_amount}}</view>
+        </view>
+        <view class="flex-row flex-center  margin-top-5">
+          <view class="h6 flex-1" >充值时间</view>
+          <view class="h6 ">{{item.dtime_formatting}}</view>
+        </view>
+        <view class="flex-row flex-center  margin-top-5">
+          <view class="h6 flex-1" >渠道等级</view>
+          <view class="h6 ">{{item.lv_name}}</view>
+        </view>
+        <view class="flex-row flex-center margin-top-5">
+          <view class="h6 flex-1">奖励金额</view>
+          <view class="h6 txt-red">￥{{item.amount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="text-center" wx:if="{{commissionrecord.length==0}}">
+      <image src="{{uploadpath}}resource/{{res.onrecord}}" class="norecord" />
+      <view class="h6 txt-gray">暂无数据</view>
+    </view>
+  </view>
+  <view class="margin-top-5 padding-bottom-24" wx:if="{{checking==3}}">
+    
+    <view class="padding-24-nobottom" wx:for="{{rentrecord}}" wx:key="k">
+      <view class="padding-24  bg-white">
+        <view class="flex-row flex-center ">
+          <view class="h6 flex-1" >名称</view>
+          <view class="h6 ">{{item.relorder_name!=''?item.relorder_name:item.relorder_nickName}}</view>
+        </view>
+        <view class="flex-row flex-center  margin-top-5">
+          <view class="h6 flex-1" >租车金额</view>
+          <view class="h6 ">￥{{item.relorder_amount}}</view>
+        </view>
+        <view class="flex-row flex-center  margin-top-5">
+          <view class="h6 flex-1" >租车日期</view>
+          <view class="h6 ">{{item.relorder_quchedate}}</view>
+        </view>
+        <view class="flex-row flex-center  margin-top-5">
+          <view class="h6 flex-1" >还车日期</view>
+          <view class="h6 ">{{item.relorder_huanche}}</view>
+        </view>
+        <view class="flex-row flex-center margin-top-5">
+          <view class="h6 flex-1">奖励金额</view>
+          <view class="h6 txt-red">￥{{item.amount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="text-center" wx:if="{{rentrecord.length==0}}">
+      <image src="{{uploadpath}}resource/{{res.onrecord}}" class="norecord" />
+      <view class="h6 txt-gray">暂无数据</view>
+    </view>
+  </view>
+</scroll-view>

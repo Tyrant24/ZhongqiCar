@@ -1,0 +1,5 @@
+/* pages/bangzhuzhongxin/bangzhuzhongxin.wxss */
+.hiddenblock{
+width: 1rpx;
+height: 1rpx;
+}

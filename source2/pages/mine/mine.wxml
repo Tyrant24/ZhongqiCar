@@ -1,0 +1,224 @@
+<!--pages/mine/mine.wxml-->
+<view class="flex-row  topblock">
+
+  <view class="flex-row flex-center flex-1">
+
+    <image src="{{uploadpath}}resource/{{res.headimg}}" wx:if="{{info.headimg==''&&memberinfo.avatarUrl==''}}" class="icon-75 radius-50 bg-white">
+    </image>
+    <image src="{{uploadpath}}member/{{info.headimg}}" wx:if="{{info.headimg!=''}}" class="icon-75 radius-50 bg-white">
+    </image>
+    <image src="{{memberinfo.avatarUrl}}" wx:if="{{info.headimg==''&&memberinfo.avatarUrl!=''}}" class="icon-75 radius-50 bg-white">
+    </image>
+    
+    <view class="margin-left-20 flex-1">
+      <view class="flex-row flex-center">
+        <view class="txt-white txt-bold chaochu" style="width:200rpx">{{info.name==''?'用户名':info.name}}</view>
+        <view style="background-image:url({{uploadpath}}resource/{{res.hehuoren}});background-size:100%   100%"
+          class="label   margin-left-20"> 
+         <view class="margin-left-50 h6 "> {{memberinfo.memberlevel_name}} </view> 
+        </view>
+      </view>
+
+      <view class="flex-row flex-center margin-top-10">
+        <view class="label2 h6 txt-white  " bindtap="navtoPage" data-page="gerenziliao">个人资料</view> 
+      <view class="  h6 txt-white margin-left-10" bindtap="navtoPage" data-page="renzheng">身份认证 ></view>
+      </view>
+      
+
+    </view>
+
+  </view>
+
+  <image src="{{uploadpath}}resource/{{res.qianbao}}" class="qianbao" bindtap="navtoPage" data-page='qianbao'></image>
+
+</view>
+
+
+
+<view class="flex-row flex-center bg-black padding-30" bindtap="navtoPage" data-page='qianbao'>
+  <view class="flex-row flex-column flex-1">
+    <view class="h6 txt-white">{{walletinfo.balance}}</view>
+    <view class="h6 txt-white">余额</view>
+  </view>
+  <view class="tiao"></view>
+  <view class="flex-row flex-column flex-1">
+    <view class="h6 txt-white">{{walletinfo.yajing}}</view>
+    <view class="h6 txt-white">押金</view>
+  </view>
+  <view class="tiao"></view>
+  <view class="flex-row flex-column flex-1">
+    <view class="h6 txt-white">{{walletinfo.commission}}</view>
+    <view class="h6 txt-white">推荐奖励</view>
+  </view>
+  <view class="tiao"></view>
+  <view class="flex-row flex-column flex-1">
+    <view class="h6 txt-white">{{walletinfo.rent}}</view>
+    <view class="h6 txt-white">经销利润</view>
+  </view>
+</view>
+
+<view class="height-50 bg-black"></view>
+
+<view class="under_white padding-20">
+  <view class="height-40"></view>
+
+
+  <view class="fenxiao padding-bottom-20">
+    <view class="flex-row flex-column">
+      <view class="xuanchuan  flex-row flex-center">
+        <view class="txt-white h6 flex-1">邀请一起成为VIP，赚取经销利润</view>
+        <button class="clear-button" open-type="share">
+          <view class="btn h6">一键邀请</view>
+        </button>
+      </view>
+    </view>
+    <view class="mid" wx:if="{{fenxiao}}">
+      <view class="flex-row flex-center">
+
+        <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="qudao">
+          <view class="flex-row flex-center">
+            <image src="{{uploadpath}}resource/{{res.qudao}}" class="icon-qudao"></image>
+            <view class="margin-left-10 h5">我的渠道</view>
+          </view>
+
+          <view class="h6 margin-top-10">今日新增 {{fenxiao.todaykehu+fenxiao.todayqudao}}/总计 {{fenxiao.kehu+fenxiao.qudao}}</view>
+
+        </view>
+
+        <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="wodekehu">
+          <view class="flex-row flex-center">
+            <image src="{{uploadpath}}resource/{{res.kehu}}" class="icon-qudao"></image>
+            <view class="margin-left-10 h5">我的客户</view>
+          </view>
+          <view class="h6 margin-top-10">今日新增 {{fenxiao.todayallkehu}}/总计 {{fenxiao.allkehu}}</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class="h5 margin-top-20 txt-bold">我的订单</view>
+
+  <view class="flex-row flex-center margin-top-20">
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="orderlist" data-param="checking=1">
+      <image src="{{uploadpath}}resource/{{res.daifukuan}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">待付款</view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="orderlist" data-param="checking=2">
+      <image src="{{uploadpath}}resource/{{res.jinxinzhong}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">进行中</view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="orderlist" data-param="checking=3">
+      <image src="{{uploadpath}}resource/{{res.yiwanchen}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">已完成</view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="orderlist" data-param="checking=0">
+      <image src="{{uploadpath}}resource/{{res.quanbu}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">全部订单</view>
+    </view>
+
+  </view>
+
+  <view class="h5 margin-top  txt-bold">我的服务</view>
+
+  <view class="flex-row flex-center margin-top-20">
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="chongzhi">
+      <image src="{{uploadpath}}resource/{{res.chongzhidaili}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">充值代理</view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="haibao">
+      <image src="{{uploadpath}}resource/{{res.tuiguanghaibao}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">推广海报</view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="qudao">
+      <image src="{{uploadpath}}resource/{{res.fenxiangzhongxin}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">分享中心</view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="fangzu">
+      <image src="{{uploadpath}}resource/{{res.fenxiangzhongxin}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">我要放租</view>
+    </view>
+
+  </view>
+
+  <view class="h5 margin-top  txt-bold">新闻学习</view>
+
+  <view class="flex-row flex-center margin-top-20">
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="xinwenlist">
+      <image src="{{uploadpath}}resource/{{res.xinwen}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">总部新闻</view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="navtoPage" data-page="xuexilist">
+      <image src="{{uploadpath}}resource/{{res.xuexizhongxin}}" class="icon-18"></image>
+      <view class="h6 margin-top-10">学习中心</view>
+    </view>
+
+    <view class=" flex-1">
+      <view class="icon-18"></view>
+    </view>
+
+    <view class=" flex-1">
+      <view class="icon-18"></view>
+    </view>
+
+  </view>
+
+  <view class="h5 margin-top margin-bottom-20 txt-bold">其他</view>
+
+
+  <view class="flex-row flex-center xinwen" bindtap="navtoPage" data-page="aboutus">
+    <image src="{{uploadpath}}resource/{{res.guanyuwomen}}" class="icon-18"></image>
+    <view class="h6 margin-left-10 flex-1">关于我们</view>
+    <image src="{{uploadpath}}resource/{{res.right}}" class="icon-15"></image>
+  </view>
+
+  <view class="flex-row flex-center xinwen" bindtap="navtoPage" data-page="yijian">
+    <image src="{{uploadpath}}resource/{{res.yijianfankui}}" class="icon-18"></image>
+    <view class="h6 margin-left-10 flex-1">意见反馈</view>
+    <image src="{{uploadpath}}resource/{{res.right}}" class="icon-15"></image>
+  </view>
+
+  <view class="flex-row flex-center xinwen" bindtap="navtoPage" data-page="bangzhuzhongxin">
+    <image src="{{uploadpath}}resource/{{res.bangzhuzhongxin}}" class="icon-18"></image>
+    <view class="h6 margin-left-10 flex-1">帮助中心</view>
+    <image src="{{uploadpath}}resource/{{res.right}}" class="icon-15"></image>
+  </view>
+
+</view>
+
+<!-- <view bindtap="yanzheng" class="allblock" wx:if="{{info.idcard1==''}}"></view> -->
+
+
+<button   bindtap="bindgetUserProfile" class="allblock" wx:if="{{memberinfo.avatarUrl==''&& memberinfo.name==''}}"></button>
+
+ 
+
+
+<view class="mask" animation="{{animationBgData}}" catchtouchmove="preventTouchMove" wx:if="{{showModalDlg}}"></view>
+
+<view class="modalDlg" animation="{{animationData}}" catchtouchmove="preventTouchMove">
+
+  <view class="text-center padding-30" wx:if="{{showModalDlg}}">
+    <view class="f-36 h5 txt-bold">提示</view>
+    <view class="txt-16 h5 margin-top txt-bold">如需进行放租服务
+      请联系客服进行线下流程，谢谢合作
+      400-XXXX-XXX</view>
+    <view class="flex-row flex-column margin-top">
+      <view class="queren" bindtap='close'>确定</view>
+    </view>
+  </view>
+
+</view>
+
+
+<image src="{{uploadpath}}resource/{{res.kefu}}" bindtap="contactkefu"  class="kefu"></image>

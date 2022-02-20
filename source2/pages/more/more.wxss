@@ -1,0 +1,51 @@
+/* pages/more/more.wxss */
+.left_block {
+  width: 24%;
+}
+
+.right_block {
+  width: 73%;
+}
+
+.checkblock {
+  width: 100%;
+  height: 94rpx;
+  line-height: 80rpx;
+  text-align: center;
+
+}
+
+.border {
+  border-left: 6rpx solid black;
+}
+
+.border2 {
+  border-left: 6rpx solid #F5F5F5;
+}
+
+.checkblock2 {
+  width: 328rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+  border-radius: 8rpx;
+
+  /* margin: 1% 3% 1% 3%; */
+}
+
+.bg-gray {
+  background: #E1E1E1;
+}
+
+.carimg {
+  width: 240rpx;
+  height: 120rpx;
+}
+
+.label {
+  padding: 2rpx 16rpx 2rpx 16rpx;
+  /* height: 28rpx; */
+  /* line-height: 28rpx; */
+  background: #000000;
+  border-radius: 18rpx;
+}

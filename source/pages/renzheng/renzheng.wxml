@@ -1,0 +1,61 @@
+<!--pages/renzheng/renzheng.wxml-->
+
+<view class="margin-top-5 padding-24 bg-white">
+  <view class="flex-row flex-center">
+    <view class="h6 txt-bold flex-1">请拍摄上传您的身份证照片</view>
+    <view class="h6  txt-bold {{renzhengstatus=='A'?'txt-blue':'txt-red'}}">{{renzhengstatus_name}}</view>
+    <!-- <view class="h6 txt-blue txt-bold">已认证</view> -->
+  </view>
+
+  <view style="background-image:url({{uploadpath}}resource/{{res.label}});background-size:100% 100%;" class="tishi  "> 
+    <view class="h7">中旗名车会严格保障您的信息安全</view>
+  </view>
+  
+  <view class="flex-row margin-top-20">
+    <image src="{{uploadpath}}{{idcard1==''?'resource':'member'}}/{{idcard1==''?res.shili1:idcard1}}" mode="aspectFit" class="idcard" bindtap="zhengmian"></image>
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}{{idcard2==''?'resource':'member'}}/{{idcard2==''?res.shili2:idcard2}}" mode="aspectFit" class="idcard" bindtap="fanmian"></image>
+  </view>
+  
+  <view class="h6 txt-bold flex-1 margin-top">请拍摄上传您的驾照</view>
+
+  <view class="flex-row margin-top-20">
+    <image src="{{uploadpath}}{{jiazhao1==''?'resource':'member'}}/{{jiazhao1==''?res.zheng:jiazhao1}}" mode="aspectFit" class="icon-100" bindtap="bindjiazhao1"></image> 
+    <image src="{{uploadpath}}{{jiazhao2==''?'resource':'member'}}/{{jiazhao2==''?res.fan:jiazhao2}}" mode="aspectFit" class="icon-100 margin-left-20" bindtap="bindjiazhao2"></image>
+  </view>
+  
+</view>
+
+
+<view class="margin-top-10 padding-24 bg-white">
+   
+  <view class="h6 txt-bold flex-1  ">示例图</view>
+  
+  <view class="flex-row margin-top-20">
+    <image src="{{uploadpath}}resource/{{res.shili1}}" class="idcard"></image>
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.shili2}}" class="idcard"></image>
+  </view>
+
+  <view class="flex-row margin-top-20">
+    <image src="{{uploadpath}}resource/{{res.shili3}}" class="idcard"></image>
+    <view class="flex-1"></view>
+    <image src="{{uploadpath}}resource/{{res.shili4}}" class="idcard"></image>
+  </view>
+
+  <view class="flex-row margin-top ">
+    <image src="{{uploadpath}}resource/{{res.tishi}}" class="icon-15"></image>
+    <view class="margin-left-10 flex-1">
+      <view class="txt-bold h6">拍摄说明：</view>
+      <view class="f-22 margin-top-5">请横向拍摄，照片上不要有阴影和反光，确保信息清晰，
+请保证驾驶证与身份证为同一人。</view>
+    </view>
+  </view>
+   
+  
+</view>
+
+<view style="height:160rpx"></view> 
+<view class=" underblock">
+  <view class="yaoqing margin-20 h4-5" bindtap="submit">提交审核</view>
+</view>

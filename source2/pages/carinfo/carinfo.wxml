@@ -1,0 +1,80 @@
+<!--pages/carinfo/carinfo.wxml-->
+<view bindtap="yanzheng">
+
+  <!--  -->
+  <swiper indicator-dots='true' autoplay='false' interval='5000' class="lunbo" duration='200' circular='true'>
+    <swiper-item wx:for="{{carinfo.carimg}}" wx:key="k">
+      <image src='{{uploadpath}}carimg/{{item.img}}' class="img" mode="aspectFit" id="{{item.id}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="flex-row flex-center margin-top">
+    <view class="flex-1"></view>
+    <view class="f-34">{{carinfo.name}}</view>
+    <view class="label txt-white h7 margin-left-10">· {{carinfo.paizhao_name}}</view>
+    <view class="label txt-white h7 margin-left-10">· {{carinfo.xiaodu_name}}</view>
+    <view class="flex-1"></view>
+  </view>
+
+  <view class="flex-row flex-center margin-top">
+    <view class="flex-1"></view>
+    <view class="label2   h7  ">{{carinfo.zuowei}}座</view>
+    <view class="label2   h7 margin-left-10">{{carinfo.pailiang}}T</view>
+    <view class="label2  h7 margin-left-10">{{carinfo.qiyou}}</view>
+    <view class="flex-1"></view>
+  </view>
+
+  <view class="flex-row margin-top ">
+
+    <view class="flex-1"></view>
+    <view class="text-center ">
+      <image src="{{uploadpath}}resource/{{res.lanya}}" class="icon-45"></image>
+      <view class="h7 margin-top-20 width-150">蓝牙：{{carinfo.lanya_name}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="text-center ">
+      <image src="{{uploadpath}}resource/{{res.qiyou}}" class="icon-45"></image>
+      <view class="h7 margin-top-20 width-150">汽油：{{carinfo.qiyou}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="text-center ">
+      <image src="{{uploadpath}}resource/{{res.haoyou}}" class="icon-45"></image>
+      <view class="h7 margin-top-20 width-150">百公里耗油：{{carinfo.haoyou}}L</view>
+    </view>
+    <view class="flex-1"></view>
+
+  </view>
+
+  <view class="flex-row  margin-top">
+
+    <view class="flex-1"></view>
+    <view class="text-center ">
+      <image src="{{uploadpath}}resource/{{res.pailiang}}" class="icon-45"></image>
+      <view class="h7 margin-top-20 width-150">排量：{{carinfo.pailiang}}L</view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="text-center ">
+      <image src="{{uploadpath}}resource/{{res.yingxiang}}" class="icon-45"></image>
+      <view class="h7 margin-top-20 width-150">倒车影像：{{carinfo.yingxiang_name}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="text-center ">
+      <image src="{{uploadpath}}resource/{{res.zuowei}}" class="icon-45"></image>
+      <view class="h7 margin-top-20 width-150">座位数：{{carinfo.zuowei}}座</view>
+    </view>
+    <view class="flex-1"></view>
+
+  </view>
+
+
+
+
+</view>
+
+<view style="height:160rpx"></view>
+  <view class=" underblock">
+    <view class="yaoqing margin-20 h4-5" bindtap="tocheckdate">查看可用日期</view>
+  </view>
+
+
+  <button   bindtap="bindgetUserProfile" class="allblock" wx:if="{{memberinfo.avatarUrl==''&& memberinfo.name==''}}"></button>

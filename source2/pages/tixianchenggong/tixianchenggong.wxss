@@ -1,0 +1,23 @@
+/* pages/tijiaochengon/tijiaochengon.wxss */
+.img{
+  width: 290rpx;
+height: 320rpx;
+}
+.backhome{
+  width: 250rpx;
+height: 74rpx;
+line-height: 74rpx;
+text-align: center;
+background: #FFFFFF;
+border: 2rpx solid #000000;
+border-radius: 20rpx;
+}
+.toorder{
+  width: 250rpx;
+height: 74rpx;
+line-height: 74rpx;
+text-align: center;
+background: #000000; 
+color: white;
+border-radius: 20rpx;
+}

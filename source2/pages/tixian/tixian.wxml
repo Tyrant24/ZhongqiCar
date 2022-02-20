@@ -1,0 +1,39 @@
+<!--pages/tixian/tixian.wxml-->
+<view class="all ">
+  <view class="padding-20" wx:if="{{walletinfo!=undefined}}">
+    <view class="whiteblock">
+      <view class="flex-row flex-bottom">
+        <view class="h4-5">可提现金额</view>
+        <view class="h3 txt-red margin-left-20">{{walletinfo.canwithdraw}}</view>
+        <view class="h4-5 margin-left-10">元</view>
+      </view>
+
+      <view class="h6 margin-top-20">可提现金额=推荐奖+经销利润-累计提现金额</view>
+      <view class="flex-row margin-top-10">
+        <view class="h6 ">推荐奖：</view>
+        <view class="h6 ">{{walletinfo.commission}} 元</view>
+      </view>
+      <view class="flex-row margin-top-10">
+        <view class="h6 ">经销利润：</view>
+        <view class="h6 ">{{walletinfo.rent}} 元</view>
+      </view>
+
+      <view class="flex-row margin-top-20">
+        <view class="h6 txt-default">累计提现金额：</view>
+        <view class="h6 txt-default">{{walletinfo.withdraw*-1}} 元</view>
+      </view>
+
+    </view>
+
+    <view class="whiteblock margin-top-20">
+      <view class="flex-row flex-center border padding-bottom-20 margin-top-20">
+
+        <view class="txt-bold f-36">￥</view>
+        <input class="txt-bold f-36 margin-left-10" bindinput="inputamount" value="{{amount}}"  type="number" placeholder="输入提现金额"></input>
+      </view>
+
+      <view class="h6 txt-default margin-top-20" bindtap="withdrawall">全部提现</view>
+      <view class="tixian txt-bold h4-5 margin-top" bindtap="withdraw">提现</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/xuexilist/xuexilist.wxml-->
+<view class="bg-white padding-20 margin-bottom-10" wx:for="{{list}}" wx:key='s' bindtap="navtoPage" data-page="xuexiinfo" data-param="id={{item.id}}">
+  <image src="{{uploadpath}}xuexi/{{item.img}}" mode='aspectFill' class="img"></image>
+
+  <view class="txt-bold h4-5 margin-top-10">{{item.title}}</view>
+
+  <view class="f-22 txt-gray  margin-top-5" style="">{{item.summary}}</view>
+
+  <view class="flex-row flex-center margin-top-5">
+    <view class="f-22 flex-1">{{item.name}}</view>
+    <image src="{{uploadpath}}resource/{{res.liulan}}" class="liulan margin-left-5"></image>
+    <view class="f-22 txt-gray margin-left-5">{{item.liulan}}</view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<!--pages/bangzhuzhongxin/bangzhuzhongxin.wxml-->
+
+<view class="padding-30">
+  <view class="flex-row padding-left-30 "  wx:for="{{list}}" wx:key="k">
+
+<view class="flex-row flex-column margin-top-20">
+  <image src="{{uploadpath}}bangzhu/{{item.icon}}" class="icon-30"></image>
+  <view class="h4-5 margin-top-5">{{item.type}}</view>
+</view>
+
+<view class="flex-1">
+  <view class="margin-left-40 border_white padding-20 " wx:for="{{item.wentilist}}" wx:for-index="idx" wx:key="s">
+  <view class="flex-row flex-center" bindtap="bindshow" id="{{item.id}}">
+    <view class="h6 flex-1">{{item.wenti}}</view>
+    <image src="{{uploadpath}}resource/{{checkid!=item.id?res.right:res.xiala}}" class="icon-15"></image>
+  </view>
+  <view class="h6 txt-gray margin-top-10 " wx:if="{{checkid==item.id}}">{{item.daan}}</view>
+</view>
+</view>
+
+
+</view>
+</view>

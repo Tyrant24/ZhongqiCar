@@ -1,0 +1,24 @@
+<!--pages/yijian/yijian.wxml-->
+
+<view class="padding-30">
+
+  <view class="flex-row flex-center">
+    <view class="h5  ">您的联系方式(选填)：</view>
+    <input type="text" placeholder="请输入联系方式" class="h5 flex-1" value="{{lianxi}}" bindinput="bindlianxi"></input>
+  </view>
+
+  <view class="margin-top-20">
+    <view class="h5  ">您的建议</view> 
+
+    <textarea placeholder="请输入您的宝贵意见" class="text h5 margin-top-10"  value="{{jianyi}}" bindinput="bindjianyi"></textarea>
+  </view>
+
+
+</view>
+
+
+<view style="height:200rpx"></view> 
+
+<view class=" underblock bg-white padding-top-20"> 
+  <view class="yaoqing margin-20 h4-5" bindtap="submit">提交反馈</view>
+</view>

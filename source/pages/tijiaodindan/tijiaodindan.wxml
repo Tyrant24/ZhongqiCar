@@ -1,0 +1,235 @@
+<!--pages/tijiaodindan/tijiaodindan.wxml-->
+
+<view class="radius-10 bg-white margin-20 padding-20">
+
+<view class="flex-row flex-center  ">
+  <view class="txt-red">*</view>
+  <view class="txt-bold h5" style="width:120rpx">联系人：</view>
+  <input type="text" placeholder="请输入联系人"   class="h5 margin-left-20 flex-1" bindinput="lianxiren"></input>
+</view>
+
+<view class="flex-row flex-center margin-top-20">
+  <view class="txt-red">*</view>
+  <view class="txt-bold h5" style="width:120rpx; ">电  话：</view>
+  <!-- <button class="clear-button  " open-type="getPhoneNumber" bindgetphonenumber="getPhoneNo"> -->
+  <input type="text" placeholder="请授权联系人电话" disabled class="h5 margin-left-20 flex-1" value="{{memberinfo.mobile}}" bindinput="dianhua"></input>
+   <!-- </button> -->
+  <!-- <button class="clear-button  " open-type="getPhoneNumber" bindgetphonenumber="getPhoneNo"> 
+    <view class="shouquan h7">授权手机号</view>
+   </button> -->
+
+</view>
+
+</view>
+
+<view class=" radius-10 bg-white margin-20 ">
+
+  <view class="flex-row flex-center padding border_white">
+    <view class="">
+      <view class="h5 txt-gray">取车时间</view>
+      <view class="h4-5 margin-top-5">{{info.firstdate}} {{info.weekone}}</view>
+      <view class="h5 txt-gray margin-top-5">{{info.taketime}}</view>
+    </view>
+    <view class=" flex-1"></view>
+    <view class="h5">共{{tianshu}}天</view>
+    <view class=" flex-1"></view>
+    <view class="text-right">
+      <view class="h5 txt-gray">取车时间</view>
+      <view class="h4-5 margin-top-5">{{info.seconddate}} {{info.weektwo}}</view>
+      <view class="h5 txt-gray margin-top-5">{{info.stilltime}}</view>
+    </view>
+  </view>
+
+  <view class="">
+
+    <view class="flex-row flex-center padding-20">
+
+      <image src="{{uploadpath}}model/{{info.img}}" class="carimg" mode="aspectFit"></image>
+      <view class="margin-left-20 flex-1">
+        <view class="h5">{{info.name}}</view> 
+        <view class="h7 margin-top-5">{{info.type_name}}</view> 
+        <view class="flex-row flex-center margin-top-20"> 
+          <view class="label   h7  ">{{info.zuowei}}座</view>
+          <view class="label   h7 margin-left-10">{{info.pailiang}}T</view>
+          <view class="label  h7 margin-left-10">{{info.qiyou}}</view>
+        </view>
+      </view>
+
+      <!-- <image src="{{uploadpath}}resource/{{res.ceshi3}}" class="carimg" mode="aspectFit"></image>
+      <view class="margin-left-20 flex-1">
+        <view class="h5">迈凯伦-650S spider</view>
+        <view class="h7 margin-top-5">跑车</view>
+        <view class="flex-row flex-center margin-top-20"> 
+          <view class="label   h7  ">1座</view>
+          <view class="label   h7 margin-left-10">6T</view>
+          <view class="label  h7 margin-left-10">98#</view>
+        </view>
+      </view> -->
+
+    </view>
+
+  </view>
+
+</view>
+
+<view class="radius-10 bg-white margin-20 padding-20">
+
+
+ 
+
+  <view class="flex-row flex-center">
+    <!-- <image src="{{uploadpath}}resource/{{res.xuan}}" class="check  " wx:if="{{type=='A'}}"></image>
+    <image src="{{uploadpath}}resource/{{res.buxuan}}" class="check " wx:if="{{type=='B'}}" > -->
+
+      <image src="{{uploadpath}}resource/{{type=='A'?res.xuan:res.buxuan}}" class="check" bindtap="bindcheck" id="A" ></image>
+    <!-- </image> -->
+    <view class="h5 margin-left-10" bindtap="bindcheck" id="A">送车上门服务</view>
+
+
+    <image src="{{uploadpath}}resource/{{type=='B'?res.xuan:res.buxuan}}" class="check margin-left-40" bindtap="bindcheck" id="B" ></image>
+    <!-- <image src="{{uploadpath}}resource/{{res.xuan}}" class="check margin-left-40" wx:if="{{type=='B'}}"></image>
+    <image src="{{uploadpath}}resource/{{res.buxuan}}" class="check margin-left-40" wx:if="{{type=='A'}}"
+      bindtap="bindcheck" id="B"></image> -->
+    <view class="h5  margin-left-10"  bindtap="bindcheck" id="B">车行自取</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-20" bindtap="navtoPage" data-page="index">
+    <image src="{{uploadpath}}resource/{{res.dizhi}}" class="check"></image>
+    <view> 
+      <!-- <input type="text" placeholder="请填写送货地址" class="h5 margin-left-10" bindinput="dizhi"></input> -->
+      <view class="margin-left-10 h5 chaochu" >{{address==""?'选地址':address}}</view>
+    </view> 
+  </view>
+
+
+
+
+</view>
+
+
+
+
+
+<view class="radius-10 bg-white margin-20 padding-20">
+
+  <view class="flex-row flex-center ">
+    <view class="h5 txt-bold flex-1">租车保障</view>
+    <view class="h7">￥{{info.baoxian}}/天</view>
+    <image src="{{uploadpath}}resource/{{bx==true?res.xuan:res.buxuan}}" class="check  margin-left-20" bindtap="baoxian"></image>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class="h7 txt-gray">人身及财务险</view>
+    <view class="h7 txt-gray">详情></view>
+  </view>
+
+  <view class="h7 margin-top-10 txt-gray">保障:全车人品在智乘过程中发生的意外及随车行李损失。
+    最高保额:50万</view>
+
+  <view class="h7 margin-top-10 txt-gray" style="white-space:pre-wrap">仅支持在线购买    {{instinfo.goumairenshu}}%的人选择购买</view>
+
+  <view class="flex-row flex-center margin-top-10 ">
+    <image src="{{uploadpath}}resource/{{bx2==true?res.xuan:res.buxuan}}" class="check  " bindtap="baoxian2"></image>
+    <view class="h7   txt-gray margin-left-10" bindtap="baoxian2">我同意</view>
+    <view class="h7  txt-default" bindtap="navtoPage" data-page="content" data-param="keycode=zuche&title='租赁合同'">《中旗名车汽车租赁合同》</view>
+    <view class="h7  txt-gray">并履行义务</view> 
+  </view>
+
+
+
+</view>
+
+<view class="radius-10 bg-white margin-20 padding-20">
+  <view class="flex-row flex-center">
+    <view class="flex-1 h5">车辆租金</view>
+    <view class=" h5">￥{{info.price}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class="  h5">租车折扣</view> 
+    <view class="label2 margin-left-20" bindtap="navtoPage" data-page="chongzhi">点击了解更多会员折扣</view>
+    <view class="flex-1"></view>
+    <view class=" h5">{{memberinfo.memberlevel_rentrate}}%</view>
+  </view>
+ 
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class=" h5">基础押金</view>
+    <view class="label2 margin-left-20">可退(取车时缴纳)</view>
+    <view class="label2 margin-left-20">可减免</view>
+    <view class="flex-1"></view>
+    <view class=" h5">￥{{info.jichuyajin}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class=" h5">违章押金</view>
+    <view class="label2 margin-left-20">可退(取车时缴纳)</view>
+    <view class="flex-1"></view>
+    <view class=" h5">￥{{info.weizhangyajin}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class="flex-1 h5">取/送车服务费</view>
+    <view class=" h5">￥{{qita}}</view>
+  </view>
+
+  <view class="flex-row flex-column" >
+    <view class="flex-row margin-top-20 " bindtap="guize">
+      <view class="txt-gray h7">查看计费规则</view>
+      <image src="{{uploadpath}}resource/{{res.tishi}}" class="check margin-left-10"></image>
+    </view>
+  </view>
+
+</view>
+
+<view class="radius-10 bg-white margin-20 ">
+  <view class="flex-row flex-center padding-20" bindtap="zhifu" id="A">
+    <image src="{{uploadpath}}resource/{{res.weixin}}" class="weixin"></image>
+    <view class="h5 margin-left-10 flex-1">微信支付</view>
+    <image src="{{uploadpath}}resource/{{zhifu=='A'?res.xuan:res.buxuan}}" class="check" ></image>
+  </view>
+
+  <view class="flex-row flex-center padding-20" bindtap="zhifu" id="B">
+    <image src="{{uploadpath}}resource/{{res.yue}}" class="yue"></image>
+    <view class="h5 margin-left-10 flex-1">余额支付</view>
+    <image src="{{uploadpath}}resource/{{zhifu=='B'?res.xuan:res.buxuan}}" class="check" ></image>
+  </view>
+</view>
+
+<view style="height:200rpx"></view> 
+
+<view class=" underblock bg-white padding-top-20">
+   <view class="text-center h5 txt-bold ">合计：￥{{zongjine}}</view>
+  <view class="yaoqing margin-20 h4-5" bindtap="submit">预订车辆</view>
+</view>
+
+
+ 
+
+<view class="mask" animation="{{animationBgData}}" catchtouchmove="preventTouchMove" wx:if="{{showModalDlg}}"></view>
+
+<view class="modalDlg2" animation="{{animationData}}" catchtouchmove="preventTouchMove">
+
+  <view class="  padding-30" wx:if="{{showModalDlg}}">
+   
+    <view class="flex-row">
+      <view class="line"></view> 
+      <view class="txt-16 h5  flex-1 ">取/送车服务费:10:00-19:00，市内5元/公里19:00-次日10:00，市内10元/公里，市外请联系客服。</view> 
+    </view>
+
+    <view class="flex-row margin-top-20">
+      <view class="line"></view> 
+      <view class="txt-16 h5 flex-1 ">取消规则:订单支付成功后，距取车时间72小时内可以无偿取消订单，距取车时间72小时内将收取订单金额的一定比例作为违约金，到达取车时间即视为订单生成无法取消。 超跑体验:超跑一小时体验限制10公里，超出按照20元/公里收费。</view> 
+    </view>
+
+    <view class="flex-row margin-top-20">
+      <view class="line"></view> 
+      <view class="txt-16 h5   flex-1">超跑一小时体验限制10公里，超出按照10元/公里收费。</view> 
+    </view>
+   
+    <view class="flex-row flex-column margin-top">
+      <view class="queren h5" bindtap='close'>确定</view>
+    </view>
+  </view>
+
+</view>

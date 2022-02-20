@@ -1,0 +1,40 @@
+<!--pages/register/register.wxml-->
+<view class="  padding-40">
+
+  <view style="height:180rpx"></view>
+
+  <view class="text-center">
+    <image src="{{uploadpath}}resource/{{res.login}}" class="login "></image>
+  </view>
+
+
+
+<view class="height-100"></view>
+
+<view class="input flex-row flex-center border_white "> 
+    <input type="text" placeholder="请输入您的手机号" class="h5  text-left " value="{{mobile}}" bindinput="bindmobile"></input> 
+</view>
+
+<view class="height-40"></view>
+
+<view class="input flex-row flex-center border_white  "> 
+    <input type="text" placeholder="请输入您的验证码" class="h5  text-left " value="{{verifycode}}" bindinput="bindyanzhengma"></input> 
+    <view class="flex-1"></view>
+    
+      <view class="label h7" wx:if="{{send==true}}" bindtap="sendverifycode">获取验证码</view>
+
+      <view class="label h7"  wx:if="{{send==false}}">{{seconds}}s后可再次发送</view>
+
+      <!-- <view class="yzm h6 txt-red text-center" bindtap="sendverifycode" wx:if="{{send==true}}">发送验证码</view>
+		<view class="  h6 txt-gray text-center" wx:if="{{send==false}}">{{seconds}}s后可再次发送</view> -->
+     
+</view>
+
+<view class="height-100"></view>
+
+
+<view class="yaoqing   h4-5" bindtap="submit">登录</view>
+
+</view>
+
+ 

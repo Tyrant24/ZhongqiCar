@@ -1,0 +1,46 @@
+<!--pages/more/more.wxml-->
+<view class="flex-row " style="height:100vh">
+
+
+  <view class="left_block " style="background:#F5F5F5">
+    <view class="  ">
+      <scroll-view scroll-y style="height:100vh;" scroll-with-animation scroll-top="{{scrollTops}}">
+        <view class="checkblock    {{index==idx?'bg-gray border':'txt-gray border2'}}" wx:for="{{list}}" wx:key='s'
+          wx:for-index="idx" id="{{idx}}" bindtap="checktype">{{item.name}}</view>
+      </scroll-view>
+    </view>
+
+  </view>
+
+  <view class="flex-1"></view>
+
+  <view class="right_block">
+
+    <view class="  ">
+
+      <scroll-view scroll-y style="height:100vh;" scroll-with-animation scroll-into-view="scroll-{{rightCur}}" bindscroll="scrollLink">
+        <view class="   margin-top-20" wx:for="{{list}}" id="scroll-{{idx}}" wx:for-index="idx" data-idx="{{idx}}" wx:key='k' bindtap="checkcar">
+          <view class="h5">{{item.name}}</view>
+
+          <view class="flex-row flex-center padding-20" wx:for="{{item.modellist}}" wx:for-index="idx2" wx:key='e' bindtap="navtoPage" data-page="carinfo" data-param="id={{item.id}}">
+            <image src="{{uploadpath}}model/{{item.img}}" class="carimg" mode="aspectFit"></image>
+
+            <view class="margin-left-20 flex-1">
+              <view class="h6">{{item.name}}</view>
+              <view class="flex-row margin-top-5">
+                <view class="label txt-white h7">· {{item.paizhao=='A'?'深牌':'非深牌'}}</view>
+                <view class="label txt-white h7 margin-left-10">· {{item.xiaodu=='A'?'车已消毒':'车未消毒'}}</view>
+              </view>
+
+              <view class="h6 margin-top-10">￥{{item.price}}/天</view>
+            </view>
+          </view>
+
+        </view>
+      </scroll-view>
+
+    </view>
+
+  </view>
+
+</view>

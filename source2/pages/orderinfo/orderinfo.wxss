@@ -1,0 +1,68 @@
+/* pages/orderinfo/orderinfo.wxss */
+Page{
+  background: #f5f5f5;
+}
+.padding{
+  padding: 20rpx 0 20rpx 0;
+  margin: 0 20rpx 0 20rpx;
+}
+.carimg {
+  width: 260rpx;
+  height: 110rpx;
+}
+
+.label{
+  width: 90rpx;
+height: 32rpx;
+text-align: center;
+line-height: 32rpx;
+background: #FED781;
+border-radius: 16rpx;
+}
+.check{
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.label2 {
+  padding: 0 10rpx 0 10rpx; 
+  background: #000000;
+  color: white;
+  font-size: 18rpx;
+  border-radius: 18rpx;
+}
+.weixin{
+  width: 48rpx;
+height: 42rpx;
+}
+.yue{
+  width: 41rpx;
+height: 44rpx;
+}
+.dizhi{
+  width: 50rpx;
+height: 50rpx;
+}
+.daohang{
+  width: 34rpx;
+  height: 34rpx;
+}
+.quxiao{
+  width: 340rpx;
+height: 80rpx;
+line-height: 80rpx;
+text-align: center; 
+color: #999999;
+border: 2rpx solid #999999;
+border-radius: 40rpx;
+}
+
+.zhifu{
+  width: 340rpx;
+height: 80rpx;
+line-height: 80rpx;
+text-align: center;
+background: #000000;
+border: 2rpx solid #999999;
+border-radius: 40rpx;
+}

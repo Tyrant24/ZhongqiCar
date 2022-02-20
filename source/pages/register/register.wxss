@@ -1,0 +1,19 @@
+/* pages/register/register.wxss */
+.login{
+  width: 600rpx;
+  height: 150rpx;
+}
+.input{
+  padding: 20rpx 0 20rpx 0;
+  margin: 0 24rpx 0 24rpx; 
+}
+.label{
+ padding: 0 10rpx 0 10rpx;
+height: 44rpx;
+line-height: 44rpx;
+text-align: center;
+background: #000000;
+/* border: 2rpx solid #FFAF00; */
+color: white;
+border-radius: 22rpx;
+}

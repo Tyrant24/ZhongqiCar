@@ -1,0 +1,17 @@
+<!--pages/aboutus/aboutus.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class="text-center" style="padding:200rpx 86rpx 0 86rpx">
+
+  <image src="{{uploadpath}}aboutus/{{info.img}}" class="img"></image>
+
+  <view class="f-36 txt-bold" style="margin-top:170rpx">{{info.title}}</view>
+
+  <view class="margin-top-20" >
+    
+    <template is="wxParse"  data="{{wxParseData:content.nodes}}" />
+
+  </view>
+ 
+
+</view>

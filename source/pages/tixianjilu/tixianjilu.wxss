@@ -1,0 +1,26 @@
+/* pages/qianbao/qianbao.wxss */
+Page{
+  background: #f5f5f5;
+}
+.tiao {
+  width: 2rpx;
+  height: 80rpx;
+  background: #F5F5F5;
+}
+.padding{
+  padding: 20rpx 0 44rpx 0;
+}
+.tixian{
+  width: 200rpx;
+height: 60rpx;
+line-height: 60rpx;
+text-align: center;
+color: #333333;
+background: #FED781;
+border-radius: 30rpx;
+}
+.checkblock{
+  width: 70rpx;
+height: 8rpx; 
+border-radius: 4rpx;
+}

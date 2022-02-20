@@ -1,0 +1,277 @@
+ 
+<swiper indicator-dots='true' autoplay='false' interval='5000' class="lunbo" duration='200' circular='true'>
+  <swiper-item wx:for="{{indexbanner}}" wx:key="k">
+    <image src='{{uploadpath}}indexbanner/{{item.img}}' class="img" id="{{item.id}}"></image>
+  </swiper-item>
+</swiper>
+
+<view style="background:{{isFixedTop==true?'#fff':''}} ;height:{{isFixedTop==true?carh*2:''}}px;top:0" wx:if="{{isFixedTop}}" class="{{isFixedTop==true?'dinbu':''}} " ></view>
+<view   style="top:{{isFixedTop==true?carh*2:''}}px"  class="{{isFixedTop==true?'dinbu':''}}   {{type==0?'bg-black':'bg-white'}}  " wx:if="{{isFixedTop}}">
+  <view class="flex-row flex-center  padding-20  "  >
+
+    <view class="flex-row column flex-1" bindtap="checktype" id="0">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==0?'txt-bold':''}}">秒杀</view>
+      <view class="tiao  {{type==0?'bg-check':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row column flex-1" bindtap="checktype" id="1">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==1?'txt-bold':''}}">分时租赁</view>
+      <view class="tiao  {{type==1?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="checktype" id="2">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==2?'txt-bold':''}}">跑车</view>
+      <view class="tiao  {{type==2?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="checktype" id="3">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==3?'txt-bold':''}}">轿车</view>
+      <view class="tiao  {{type==3?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="checktype" id="4">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==4?'txt-bold':''}}">SUV</view>
+      <view class="tiao  {{type==4?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+
+  </view>
+</view>
+
+<view class=" {{type==0?'bg-black':'bg-white'}}   "  >
+  <view id="box" >
+  <view class="flex-row flex-center  padding-20  "  >
+
+    <view class="flex-row column flex-1" bindtap="checktype" id="0">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==0?'txt-bold':''}}">秒杀</view>
+      <view class="tiao  {{type==0?'bg-check':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row column flex-1" bindtap="checktype" id="1">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==1?'txt-bold':''}}">分时租赁</view>
+      <view class="tiao  {{type==1?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="checktype" id="2">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==2?'txt-bold':''}}">跑车</view>
+      <view class="tiao  {{type==2?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="checktype" id="3">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==3?'txt-bold':''}}">轿车</view>
+      <view class="tiao  {{type==3?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+    <view class="flex-row flex-column flex-1" bindtap="checktype" id="4">
+      <view class="{{type<1?'txt-white':''}} h5 {{type==4?'txt-bold':''}}">SUV</view>
+      <view class="tiao  {{type==4?'bg-check2':''}}  margin-top-5"></view>
+    </view>
+
+
+  </view>
+</view>
+  <!-- <view wx:if="{{isFixedTop}}" style="height:98rpx"></view> -->
+  <!-- catchtouchmove='catchTouchMove' -->
+  <swiper bindchange='change' current='{{typenumber}}' duration="300" autoplay='{{false}}' circular='true'
+    style='width:100%; height:{{type==0?18*miaosha.length:50}}vh' class="">
+
+    <!-- 秒杀 -->
+    <swiper-item class="padding-bottom-40">
+
+      <!-- <scroll-view scroll-y="true" style="height:100%" bindscrolltolower="lower"> -->
+
+        <view class=" flex-row  block " wx:for="{{miaosha}}" wx:for-index="idx">
+
+          <view class="flex-row flex-center  flex-1">
+
+            <view class="position-relative">
+              <view wx:if="{{item.carstatus=='B'}}" class="zuman h7">当日已租满</view>
+              <image src="{{uploadpath}}model/{{item.img}}" mode="aspectFit" class="carimg {{item.carstatus=='B'?'opa3':''}}  "></image>
+            </view>
+
+
+            <view class="flex-row column margin-left-20" style="height:100%">
+              <view class="h6  txt-bold">{{item.name}}(活动)</view>
+              <view class="flex-1"></view>
+              <view class="txt-red h6 txt-bold">￥{{item.price}}/天</view>
+            </view>
+          </view>
+
+          <view class="flex-row flex-column">
+            <view class="flex-1"></view>
+            <view class="h7" >仅剩{{item.carstatus=='B'?0:1}}辆</view>
+            <view wx:if="{{item.carstatus!='B'}}" class="yudin h6 margin-top-5" bindtap="navtoPage" data-page="carinfo" data-param="id={{item.id}}">立即预定</view>
+            <view wx:if="{{item.carstatus=='B'}}" class="yudin2 h6 margin-top-5" >立即预定</view>
+          </view>
+
+        </view>
+
+      <!-- </scroll-view> -->
+
+    </swiper-item>
+
+    <!-- 分时租赁 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:100%" bindscrolltolower="lower">
+
+        <view class="flex-row flex-wrap">
+
+          <view class="  flex-row flex-column  block2 " wx:for="{{fenshi}}" wx:for-index="idx" bindtap="navtoPage" data-page="carinfo" data-param="id={{item.id}}">
+ 
+              <image src="{{uploadpath}}model/{{item.img}}" class="carimg2 " mode="aspectFit"></image>
+  
+                <view class="h6   margin-top-10 chaochu">{{item.name}}</view> 
+                <view class="  h6 txt-bold">￥{{item.price}}/{{item.shichang}}小时</view>
+        
+            <!-- <view class="flex-row flex-column">
+              <view class="flex-1"></view>
+              <view class="h7">仅剩{{idx+1}}辆</view>
+              <view class="yudin h6 margin-top-5">立即预定</view>
+            </view> -->
+
+          </view>
+
+        </view>
+
+
+      </scroll-view>
+    </swiper-item>
+
+    <!-- 跑车 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:100%" bindscrolltolower="lower">
+
+        <view class="flex-row flex-wrap">
+
+          <view class="  flex-row flex-column  block2 " wx:for="{{paoche}}" wx:for-index="idx" bindtap="navtoPage" data-page="carinfo" data-param="id={{item.id}}">
+            <!-- mode="aspectFit" -->
+              <image src="{{uploadpath}}model/{{item.img}}" class="carimg2 " mode="aspectFit"></image>
+  
+                <view class="h6   margin-top-10 chaochu">{{item.name}}</view> 
+                <view class="  h6 txt-bold">￥{{item.price}}/天</view>
+        
+         
+
+            <!-- <view class="flex-row flex-column">
+              <view class="flex-1"></view>
+              <view class="h7">仅剩{{idx+1}}辆</view>
+              <view class="yudin h6 margin-top-5">立即预定</view>
+            </view> -->
+
+          </view>
+
+        </view>
+
+
+      </scroll-view>
+    </swiper-item>
+
+    <!-- 轿车 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:100%" bindscrolltolower="lower">
+
+        <view class="flex-row flex-wrap">
+
+          <view class="  flex-row flex-column  block2 " wx:for="{{jiaoche}}" wx:for-index="idx" bindtap="navtoPage" data-page="carinfo" data-param="id={{item.id}}">
+ 
+              <image src="{{uploadpath}}model/{{item.img}}" class="carimg2 " mode="aspectFit"></image>
+  
+                <view class="h6   margin-top-10 chaochu">{{item.name}}</view> 
+                <view class="  h6 txt-bold">￥{{item.price}}/天</view>
+        
+         
+
+            <!-- <view class="flex-row flex-column">
+              <view class="flex-1"></view>
+              <view class="h7">仅剩{{idx+1}}辆</view>
+              <view class="yudin h6 margin-top-5">立即预定</view>
+            </view> -->
+
+          </view>
+
+        </view>
+
+
+      </scroll-view>
+    </swiper-item>
+
+    <!-- SUV -->
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:100%" bindscrolltolower="lower">
+
+        <view class="flex-row flex-wrap">
+
+          <view class="  flex-row flex-column  block2 " wx:for="{{suv}}" wx:for-index="idx" bindtap="navtoPage" data-page="carinfo" data-param="id={{item.id}}">
+ 
+              <image src="{{uploadpath}}model/{{item.img}}" class="carimg2 " mode="aspectFit"></image>
+  
+                <view class="h6   margin-top-10 chaochu">{{item.name}}</view> 
+                <view class="  h6 txt-bold">￥{{item.price}}/天</view>
+          
+            <!-- <view class="flex-row flex-column">
+              <view class="flex-1"></view>
+              <view class="h7">仅剩{{idx+1}}辆</view>
+              <view class="yudin h6 margin-top-5">立即预定</view>
+            </view> -->
+
+          </view>
+
+        </view>
+
+
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+<view class="h4-5 txt-bold padding-20" style="padding-bottom:0">有趣分享</view>
+
+
+<view class="padding-15 flex-row ">
+
+<view class="flex-1">
+  <view class="margin-right-10 margin-top-10 card " wx:for="{{fenxiang}}" wx:key="s" wx:for-index="idx" wx:if="{{idx%2==0}}" bindtap="navtoPage" data-page="dongtai" data-param="id={{item.id}}&member_id={{memberinfo.id}}">
+    <image src="{{uploadpath}}fenxiang/{{item.fengmian}}" mode="widthFix" style="width:100%"></image> 
+    <view class="padding-10 bg-white">
+      <view class="txt-bold chaochu2   h5">{{item.title}}</view>
+      <view class="flex-row flex-center margin-top-10">
+        <image src="{{uploadpath}}fenxiang/{{item.touxiang}}" class="icon-25 radius-50"></image>
+        <view class="h6 margin-left-10 flex-1">{{item.name}}</view>
+        <image src="{{uploadpath}}resource/{{item.dian=='A'?res.zan:res.buzan}}" class="icon-15"></image>
+        <view  class="h6 margin-left-10">{{item.dianzanshu}}</view>
+      </view>
+      <view style="height:10rpx"></view>
+    </view>
+
+  </view>
+</view>
+
+
+<view class="flex-1">
+
+  <view class="margin-left-10 margin-top-10 card" wx:for="{{fenxiang}}" wx:key="s" wx:for-index="idx" wx:if="{{idx%2!=0}}" bindtap="navtoPage" data-page="dongtai" data-param="id={{item.id}}">
+    <image src="{{uploadpath}}fenxiang/{{item.fengmian}}" mode="widthFix" style="width:100%"></image> 
+    <view class="padding-10 bg-white">
+      <view class="txt-bold chaochu2   h5">{{item.title}}</view>
+      <view class="flex-row flex-center margin-top-10">
+        <image src="{{uploadpath}}fenxiang/{{item.touxiang}}" class="icon-25 radius-50"></image>
+        <view class="h6 margin-left-10 flex-1">{{item.name}}</view>
+        <image src="{{uploadpath}}resource/{{item.dian=='A'?res.zan:res.buzan}}" class="icon-15"></image>
+        <view  class="h6 margin-left-10">{{item.dianzanshu}}</view>
+      </view>
+      <view style="height:10rpx"></view>
+    </view>
+
+  </view>
+
+</view>
+
+
+</view>
+
+
+
+<view class="more txt-white h6" bindtap="navtoPage" data-page="more">更多车辆</view>
+
+<image src="{{uploadpath}}resource/{{res.kefu}}" bindtap="contactkefu"  class="kefu"></image>

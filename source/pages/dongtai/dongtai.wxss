@@ -1,0 +1,33 @@
+/* pages/dongtai/dongtai.wxss */
+.lunbo{
+  width: 100%;
+  height: 420rpx;
+}
+.img{
+  width: 100%;
+  height: 420rpx;
+}
+.under{
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+}
+.left{
+  width: 340rpx;
+height: 88rpx;
+line-height: 88rpx;
+text-align: center;
+background: #FFFFFF;
+box-shadow: 0rpx 4rpx 36rpx 0rpx rgba(216, 64, 77, 0.16);
+border-radius: 44rpx;
+}
+
+.right{
+  width: 340rpx;
+height: 88rpx;
+line-height: 88rpx;
+text-align: center; 
+background: #000000;
+box-shadow: 0rpx 4rpx 36rpx 0rpx rgba(216, 64, 77, 0.16);
+border-radius: 44rpx;
+}

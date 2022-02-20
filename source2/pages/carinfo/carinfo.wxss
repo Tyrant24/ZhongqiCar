@@ -1,0 +1,37 @@
+/* pages/carinfo/carinfo.wxss */
+.lunbo{
+  width: 100%;
+  height: 400rpx;
+}
+.img{
+  width: 100%;
+  height: 400rpx;
+}
+.label {
+  padding: 2rpx 20rpx 2rpx 20rpx;
+  /* height: 28rpx; */
+  /* line-height: 28rpx; */
+  background: #000000;
+  border-radius: 18rpx;
+}
+.label2{
+  width: 90rpx;
+height: 32rpx;
+text-align: center;
+line-height: 32rpx;
+background: #FED781;
+border-radius: 16rpx;
+}
+.width-150{
+  width:200rpx;
+  text-align: center;
+}
+.allblock{
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 100; 
+  /* background: #03bb0079; */
+}

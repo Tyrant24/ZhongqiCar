@@ -1,0 +1,5 @@
+/* pages/aboutus/aboutus.wxss */
+.img{
+  width: 450rpx;
+  height: 190rpx;
+}

@@ -1,0 +1,146 @@
+<!--pages/qudao/qudao.wxml-->
+<view class="  bg-black padding-50 ">
+  <view class="flex-row flex-center ">
+    <view>
+      <view class="h6 txt-white">推广人数</view>
+      <view class="flex-row flex-bottom margin-top-40">
+        <view class="txt-white h3 lh48 ">{{t0list.length+t1list.length}}</view>
+        <view class="txt-white h6">人</view>
+      </view>
+    </view>
+    <view class="flex-1"></view>
+    <view class="txt-white">
+      <image src="{{uploadpath}}resource/{{res.qudaoren}}" class="qudaoren" />
+    </view>
+  </view>
+</view>
+<view class="flex-row tabbar">
+  <view class="flex-1 flex-row" bindtap="settab" data-t="0">
+    <view class="flex-1"></view>
+    <view class="tablable {{t==0?'active':''}}">一级({{t0list.length}})</view>
+    <view class="flex-1"></view>
+  </view>
+  <view class="flex-1 flex-row" bindtap="settab" data-t="1">
+    <view class="flex-1"></view>
+    <view class="tablable {{t==1?'active':''}}">二级({{t1list.length}})</view>
+    <view class="flex-1"></view>
+  </view>
+</view>
+<scroll-view scroll-y class="udpeople"  wx:if="{{t==0}}">
+  <view class="bg-white paddingsearchbox">
+    <view class="bgsearchbox">
+      <input placeholder="点击搜索会员名称" value="{{t0keyword}}" bindinput="inputt0keyword" />
+    </view>
+  </view>
+  <view class="bg-white paddingsortbox">
+    <view class="flex-row" >
+      <view class="flex-1 flex-row" bindtap="changet0sortcharge">
+        <view class="flex-1"></view>
+        <view class=" flex-row flex-center">
+          <view class="h6 margin-right">
+            充值排序
+          </view>
+          <view >
+            <view  class="sortarrow" wx:if="{{t0sortcharge==0}}"><image src="{{uploadpath}}resource/{{res.nosort}}" class="sortarrow"  /></view>
+            <view class="sortarrow" wx:if="{{t0sortcharge==1}}"><image src="{{uploadpath}}resource/{{res.upsort}}" class="sortarrow" /></view>
+            <view class="sortarrow" wx:if="{{t0sortcharge==2}}"><image src="{{uploadpath}}resource/{{res.download}}" class="sortarrow" /></view>
+          </view>
+        </view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="flex-1 flex-row" bindtap="changet0sortrent">
+        <view class="flex-1"></view>
+        <view class=" flex-row flex-center">
+          <view class="h6 margin-right">
+            租车排序
+          </view>
+          <view >
+            <view  class="sortarrow" wx:if="{{t0sortrent==0}}"><image src="{{uploadpath}}resource/{{res.nosort}}" class="sortarrow"  /></view>
+            <view class="sortarrow" wx:if="{{t0sortrent==1}}"><image src="{{uploadpath}}resource/{{res.upsort}}" class="sortarrow" /></view>
+            <view class="sortarrow" wx:if="{{t0sortrent==2}}"><image src="{{uploadpath}}resource/{{res.download}}" class="sortarrow" /></view>
+          </view>
+        </view>
+        <view class="flex-1"></view>
+      </view>
+    </view>
+  </view>
+  <view class="flex-row flex-center padding-30  border_white bg-white" wx:for="{{t0listfilter}}" wx:key="k">
+    <image src="{{item.headimg!=''?uploadpath+'member/'+item.headimg:item.avatarUrl}}" class="icon-50 radius-50">
+    </image>
+
+    <view class="margin-left-20">
+      <view class="flex-row flex-center">
+        <view class="h5">{{item.name!=''?item.name:item.nickName}}</view>
+        <view class="label h7 margin-left-10">{{item.memberlevelname}}</view>
+      </view>
+      <view class="h7 margin-top-5">加入时间：{{item.upmembertime_formatting}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view>
+      <view class=" h7 text-right">累计充值: ¥{{item.totalcharge}}</view>
+      <view class=" h7 text-right margin-top-10">累计租车: ¥{{item.totalorder}}</view>
+    </view>
+  </view>
+
+</scroll-view>
+
+
+
+<scroll-view scroll-y class="udpeople" wx:if="{{t==1}}">
+  <view class="bg-white paddingsearchbox">
+    <view class="bgsearchbox">
+      <input placeholder="点击搜索会员名称" value="{{t1keyword}}" bindinput="inputt1keyword" />
+    </view>
+  </view>
+  <view class="bg-white paddingsortbox">
+    <view class="flex-row" >
+      <view class="flex-1 flex-row" bindtap="changet1sortcharge">
+        <view class="flex-1"></view>
+        <view class=" flex-row flex-center">
+          <view class="h6 margin-right">
+            充值排序
+          </view>
+          <view >
+            <view  class="sortarrow" wx:if="{{t1sortcharge==0}}"><image src="{{uploadpath}}resource/{{res.nosort}}" class="sortarrow"  /></view>
+            <view class="sortarrow" wx:if="{{t1sortcharge==1}}"><image src="{{uploadpath}}resource/{{res.upsort}}" class="sortarrow" /></view>
+            <view class="sortarrow" wx:if="{{t1sortcharge==2}}"><image src="{{uploadpath}}resource/{{res.download}}" class="sortarrow" /></view>
+          </view>
+        </view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="flex-1 flex-row" bindtap="changet1sortrent">
+        <view class="flex-1"></view>
+        <view class=" flex-row flex-center">
+          <view class="h6 margin-right">
+            租车排序
+          </view>
+          <view >
+            <view  class="sortarrow" wx:if="{{t1sortrent==0}}"><image src="{{uploadpath}}resource/{{res.nosort}}" class="sortarrow"  /></view>
+            <view class="sortarrow" wx:if="{{t1sortrent==1}}"><image src="{{uploadpath}}resource/{{res.upsort}}" class="sortarrow" /></view>
+            <view class="sortarrow" wx:if="{{t1sortrent==2}}"><image src="{{uploadpath}}resource/{{res.download}}" class="sortarrow" /></view>
+          </view>
+        </view>
+        <view class="flex-1"></view>
+      </view>
+    </view>
+  </view>
+  <view class="flex-row flex-center padding-30  border_white bg-white" wx:for="{{t1listfilter}}" wx:key="k">
+    <image src="{{item.headimg!=''?uploadpath+'member/'+item.headimg:item.avatarUrl}}" class="icon-50 radius-50">
+    </image>
+
+    <view class="margin-left-20">
+      <view class="flex-row flex-center">
+        <view class="h5">{{item.name!=''?item.name:item.nickName}}</view>
+        <view class="label h7 margin-left-10">{{item.memberlevelname}}</view>
+      </view>
+      <view class="h7 margin-top-5">推荐人：{{item.upmember_name!=''?item.upmember_name:item.upmember_nickName}}</view>
+      <view class="h7 margin-top-5">加入时间：{{item.upmembertime_formatting}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view>
+      <view class=" h7 text-right">累计充值: ¥{{item.totalcharge}}</view>
+      <view class=" h7 text-right margin-top-10">累计租车: ¥{{item.totalorder}}</view>
+    </view>
+  </view>
+
+</scroll-view>

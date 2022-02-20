@@ -1,0 +1,14 @@
+
+<view class="margin-top-5" >
+  <view class="flex-row padding-24 bg-white" wx:for="{{record}}" wx:key="k">
+    <view class=" flex-1 ">
+      <div class="h4 ">
+        ￥{{item.amount*-1}}
+      </div>
+      <div class="h5 margin-top-5">
+        {{item.dtime_formatting}}
+      </div>
+    </view>
+    <view class="h4-5 {{item.status=='P'?'txt-red':'txt-green'}} txt-bold"> {{item.status=='P'?"提现审核中":"提现成功"}}</view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/gerenziliao/gerenziliao.wxml-->
+
+<view class="bg-white">
+
+  <view class=" text-center padding-top ">
+    <image src="{{uploadpath}}{{headimg==''?'resource':'member'}}/{{headimg==''?res.shangchuan:headimg}}" class="icon-75 radius-50 bg-gray" bindtap="touxiang"></image>
+  </view>
+
+  <view class="input flex-row flex-center margin-top border_white">
+    <view class="h5 txt-bold" style="white-space:pre;width:140rpx">姓  名：</view>
+    <input type="text" placeholder="请输入姓名" class="h5 margin-left-40" value="{{name}}" bindinput="bindname"></input>
+  </view>
+
+  <view class="input flex-row flex-center border_white ">
+    <view class="h5 txt-bold" style="width:140rpx">手机号：</view>
+    <input type="text" placeholder="请输入手机号" disabled  class="h5 margin-left-40 flex-1" value="{{mobile}}" bindinput="bindmobile"></input>
+  
+    <button class="clear-button  " open-type="getPhoneNumber" bindgetphonenumber="getPhoneNo">
+      <view class="label h7"  >授权手机号</view>
+     </button>
+  </view>
+
+  <view class="input flex-row flex-center  ">
+    <view class="h5 txt-bold" style="width:140rpx">所在地：</view>
+    <input type="text" placeholder="请输入所在地" class="h5 margin-left-40  " value="{{address}}" bindinput="bindaddress"></input>
+  </view>
+
+</view>
+
+
+
+
+<view style="height:160rpx"></view> 
+<view class=" underblock">
+  <view class="yaoqing margin-20 h4-5" bindtap="submit">提交</view>
+</view>

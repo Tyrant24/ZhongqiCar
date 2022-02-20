@@ -1,0 +1,46 @@
+/* pages/chongzhi/chongzhi.wxss */
+Page {
+  background: black;
+}
+
+.block {
+  padding: 50rpx 34rpx 50rpx 34rpx;
+  background: linear-gradient(37deg, #EED098 0%, #EAD9AA 100%);
+  border-radius: 20rpx;
+}
+.block.active {
+  background: #232124;
+  border-image: linear-gradient(0deg, #EED098, #EAD9AA) 10 10;
+}
+.f-46{
+  font-size: 46rpx;
+}
+.money{
+  color: #664A2D;
+}
+.hese{
+  color: #64492C;
+}
+.label{
+  width: 190rpx;
+height: 60rpx;
+line-height: 60rpx;
+text-align: center;
+background: #060800;
+border-radius: 30rpx;
+color: white;
+}
+
+.block.active .kv{
+  color:white;
+}
+
+.block.active .kc{
+  color:#EAD8A9;
+}
+
+.block.active .label{
+  background: #232124;
+  color:#EAD8A9;
+  border: 1px solid #EAD8A9;
+}

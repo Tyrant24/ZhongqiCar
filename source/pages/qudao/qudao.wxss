@@ -1,0 +1,76 @@
+/* pages/qudao/qudao.wxss */
+Page{
+  background: #f5f5f5;
+}
+.search{
+  margin: 20rpx;
+ padding: 10rpx 30rpx;
+background: #F5F5F5;
+opacity: 1;
+border-radius: 30rpx;
+}
+view{
+  font-size: 30rpx;
+}
+.label {
+  width: 120rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  background: #000000;
+  color: #FED781;
+  border-radius: 10rpx;
+}
+.lh48{
+  line-height:48rpx;
+}
+.margin-top-40{
+  margin-top:20rpx;
+}
+
+.qudaoren{
+  height:77rpx;
+  width:104rpx;
+}
+.tabbar{
+  background:#f3f3f3;
+  border-bottom:2rpx solid #E6E6E6;
+}
+.tablable{
+  font-size: 28rpx;
+  padding-top:27rpx;
+  padding-bottom:27rpx;
+  border-bottom: 4rpx solid #f3f3f3;
+}
+.tablable.active{
+  color:#ffaf00;
+  border-bottom: 4rpx solid #ffaf00;
+}
+
+.udpeople{
+  height: calc( 100vh - 300rpx   )
+}
+.paddingsearchbox{
+  padding:15rpx 24rpx 15rpx 24rpx;
+}
+.bgsearchbox{
+  height:50rpx;
+  background:#f5f5f5;
+  border-radius:25rpx;
+  padding-left:20rpx;
+  padding-right:20rpx;
+}
+.bgsearchbox input{
+  font-size: 20rpx;
+  color:#999999;
+  text-align: center;
+}
+.paddingsortbox{
+  padding-top:28rpx;
+  padding-bottom:28rpx;
+}
+.sortarrow{
+  display: flex;
+  width:14rpx;
+  height:20rpx;
+}

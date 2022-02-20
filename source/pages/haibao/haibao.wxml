@@ -1,0 +1,37 @@
+<!--pages/haibao/haibao.wxml-->
+
+<view class="blackblock">
+
+  <view class="haibao">
+    <image src="{{uploadpath}}resource/{{res.haibao}}" style="width:100%" mode="widthFix"></image>
+
+    <view class="padding-20" style="font-size:22rpx;white-space: pre-wrap;line-height:36rpx">{{instinfo.haibao}}</view>
+
+    <view class="under flex-row flex-center">
+      <!-- <image src="{{uploadpath}}resource/{{res.ceshi}}" class="icon-60"></image> -->
+
+      <image src="{{uploadapi}}inst/qrcode?inst_id=1" class="icon-60"></image>
+      <view class="margin-left-20">
+         <view class="f-34 txt-bold">{{info.name}}</view>
+
+         <!-- <view style="background-image:url({{uploadpath}}resource/{{res.hehuoren}});background-size:100%   100%"
+          class="label h6 text-right ">
+          {{memberinfo.memberlevel_name}}
+        </view> -->
+
+        <view style="background-image:url({{uploadpath}}resource/{{res.hehuoren}});background-size:100%   100%"
+          class="label h6 margin-top-5"> 
+         <view class="margin-left-60 h6 "> {{memberinfo.memberlevel_name}} </view> 
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+  <view class="btn margin-20 h4-5 txt-bold" bindtap="savephones">保存海报</view>
+
+</view>
+
+
+<canvas style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;position:fixed;left:999px" canvas-id="myCanvas" />

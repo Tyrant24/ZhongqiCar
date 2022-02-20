@@ -1,0 +1,14 @@
+/* pages/xinweninfo/xinweninfo.wxss */
+.zhuanfa{
+  width: 600rpx;
+height: 88rpx;
+
+background: #000000;
+box-shadow: 2rpx 4rpx 36rpx 0rpx rgba(0, 0, 0, 0.16);
+border-radius: 44rpx;
+}
+.under{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}

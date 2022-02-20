@@ -1,0 +1,28 @@
+/* pages/haibao/haibao.wxss */
+.blackblock{ 
+  background: #191919; 
+  width: 100vw;
+  height: 100vh;
+}
+.haibao{
+  background: white;
+  margin: 30rpx 76rpx 60rpx 76rpx; 
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+}
+.btn{ 
+height: 70rpx;
+line-height: 70rpx;
+text-align: center;
+margin: 0 76rpx 0 76rpx;
+background: #FCC12D;
+border-radius: 36rpx;
+}
+.under{
+  padding: 16rpx 20rpx 16rpx 20rpx;
+  border-top: 2rpx solid #E6E6E6;
+}
+.label {
+  width: 184rpx;
+  height: 40rpx;
+  padding-right: 20rpx;
+}

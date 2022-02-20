@@ -1,0 +1,9 @@
+<!--pages/jiangli/jiangli.wxml-->
+<view class="flex-row flex-center padding" wx:for="{{5}}">
+  <view class="flex-1">
+    <view class="h5 txt-bold" >法拉利</view>
+    <view class="h7 margin-top-10">租车时间：2021.03.16-2021.03.20</view>
+  </view>
+
+  <view class="txt-red f-36 txt-bold">￥ 100</view>
+</view>

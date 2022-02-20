@@ -1,0 +1,40 @@
+/* pages/orderlist/orderlist.wxss */
+Page {
+  background: #f5f5f5;
+}
+
+.checkblock {
+  width: 70rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+
+.label {
+  width: 90rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  background: #FED781;
+  border-radius: 16rpx;
+}
+
+.carimg {
+  width: 260rpx;
+  height: 110rpx;
+}
+
+.padding-under {
+  padding-top: 10rpx;
+  margin: 0 10rpx 0 10rpx;
+  border-top: 2rpx solid #E6E6E6;
+}
+
+.btn {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background: #000000;
+  color: white;
+  border-radius: 24rpx;
+}

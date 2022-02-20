@@ -1,0 +1,24 @@
+/* pages/tixian/tixian.wxss */
+.all{
+  background: black;
+  width: 100vw;
+  height: 100vh;
+}
+.whiteblock{
+  /* height: 280rpx; */
+  padding: 30rpx;
+background: #FFFFFF;
+border-radius: 10rpx;
+}
+.border{
+  border-bottom: 2rpx solid black;
+
+}
+.tixian{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+background: #000000;
+color: white;
+border-radius: 10rpx;
+}

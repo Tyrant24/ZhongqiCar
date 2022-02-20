@@ -1,0 +1,76 @@
+<!--pages/orderlist/orderlist.wxml-->
+
+<view class="flex-row  padding-top-20 bg-white">
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="0">
+    <view class="{{checking==0?'txt-default':''}} h5">全部</view>
+    <view class="checkblock {{checking==0?'bg-default':''}}  margin-top-20"></view>
+  </view>
+
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="1">
+    <view class="{{checking==1?'txt-default':''}} h5">待付款</view>
+    <view class="checkblock {{checking==1?'bg-default':''}} margin-top-20"></view>
+  </view>
+
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="2">
+    <view class="{{checking==2?'txt-default':''}} h5">进行中</view>
+    <view class="checkblock {{checking==2?'bg-default':''}} margin-top-20"></view>
+  </view>
+
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="3">
+    <view class="{{checking==3?'txt-default':''}} h5">已完成</view>
+    <view class="checkblock {{checking==3?'bg-default':''}} margin-top-20"></view>
+  </view>
+
+  <view class="flex-row flex-column flex-1" bindtap="bindcheck" id="4">
+    <view class="{{checking==4?'txt-default':''}} h5">已取消</view>
+    <view class="checkblock {{checking==43?'bg-default':''}} margin-top-20"></view>
+  </view>
+</view>
+
+
+<view class="padding-left-20 padding-right-20">
+
+  <view class="bg-white radius-10 bg-white padding-20 margin-top-20" wx:for="{{list}}" wx:for-index="idx">
+
+
+    <view bindtap="todetail" id="{{item.id}}">
+
+  
+    <view class="flex-row flex-center">
+      <view class="h7 flex-1">订单编号：{{item.orderno}}</view>
+      <view class="txt-default h7">{{item.order_status_name}}</view>
+    </view>
+ 
+    <view class="flex-row flex-center padding-20">
+      <image src="{{uploadpath}}model/{{item.model_img}}" class="carimg" mode="aspectFit"></image>
+      <view class="margin-left-20 flex-1">
+        <view class="h6 txt-bold">{{item.model_name}}</view>
+        <view class="h7 margin-top-5" wx:if="{{item.model_type=='A'}}">跑车</view>
+        <view class="h7 margin-top-5" wx:if="{{item.model_type=='B'}}">轿车</view>
+        <view class="h7 margin-top-5" wx:if="{{item.model_type=='C'}}">SUV</view>
+        <view class="flex-row flex-center margin-top-20">
+          <view class="label   h7  ">{{item.model_zuowei}}座</view>
+          <view class="label   h7 margin-left-10">{{item.model_pailiang}}T</view>
+          <view class="label  h7 margin-left-10">{{item.model_qiyou}}</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+    <view class="padding-under flex-row flex-center">
+
+      <view class="h7 flex-1">{{item.ordertime}}</view>
+
+      <view class="btn h6 txt-bold" wx:if="{{item.order_status=='A'}}" bindtap="pay" id="{{item.id}}">立即支付</view>
+      <view class="btn h6 txt-bold" wx:if="{{item.order_status=='B'||item.order_status=='C'}}" bindtap="navtoPage" data-page="xuanriqi" data-param="model_id={{item.model_id}}&order_id={{item.id}}" >继续租车</view>
+      <view class="btn h6 txt-bold" wx:if="{{item.order_status=='D'||item.order_status=='E'}}" bindtap="navtoPage" data-page="carinfo" data-param="id={{item.model_id}}">再次租车</view>
+
+    </view>
+
+
+  </view>
+
+
+
+</view>

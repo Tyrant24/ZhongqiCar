@@ -1,0 +1,204 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.16.0",
+  "appid": "wx3f475672f8978c05",
+  "projectname": "%E4%B8%AD%E6%97%97%E5%90%8D%E8%BD%A6",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "起名",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的客户",
+          "pathName": "pages/wodekehu/wodekehu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "充值代理",
+          "pathName": "pages/chongzhi/chongzhi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的渠道&共享中心",
+          "pathName": "pages/qudao/qudao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人资料",
+          "pathName": "pages/gerenziliao/gerenziliao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "奖励详情",
+          "pathName": "pages/jiangli/jiangli",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "钱包",
+          "pathName": "pages/qianbao/qianbao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "测试",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "更多车辆",
+          "pathName": "pages/more/more",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "选择租用日期",
+          "pathName": "pages/xuanriqi/xuanriqi",
+          "query": "model_id=1",
+          "scene": null
+        },
+        {
+          "name": "车辆详情",
+          "pathName": "pages/carinfo/carinfo",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "确认订单",
+          "pathName": "pages/tijiaodindan/tijiaodindan",
+          "query": "checkInDate=2021-04-09&checkOutDate=2021-04-16&taketime=08:00&stilltime=08:00&model_id=1&tianshu=7",
+          "scene": null
+        },
+        {
+          "name": "订单列表",
+          "pathName": "pages/orderlist/orderlist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/orderinfo/orderinfo",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "提交成功",
+          "pathName": "pages/tijiaochengon/tijiaochengon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "海报",
+          "pathName": "pages/haibao/haibao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "有趣分享详情页面",
+          "pathName": "pages/dongtai/dongtai",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "总部新闻",
+          "pathName": "pages/xinwenlist/xinwenlist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学习中心",
+          "pathName": "pages/xuexilist/xuexilist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "帮助中心",
+          "pathName": "pages/bangzhuzhongxin/bangzhuzhongxin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "选地址",
+          "pathName": "pages/index/index",
+          "query": "checkInDate=2021-04-09&checkOutDate=2021-04-16&taketime=08:00&stilltime=08:00&model_id=1&tianshu=7",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/register/register",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

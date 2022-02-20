@@ -1,0 +1,28 @@
+<!--pages/wodekehu/wodekehu.wxml-->
+<block wx:if="{{t0list.length>0}}">
+  <view class="bg-white paddingsearchbox">
+    <view class="bgsearchbox">
+      <input placeholder="点击搜索会员名称" value="{{t0keyword}}" bindinput="inputt0keyword" />
+    </view>
+  </view>
+  <view class="flex-row flex-center padding-30 margin-bottom-10 bg-white" wx:for="{{t0listfilter}}">
+    <image src="{{item.headimg!=''?uploadpath+'member/'+item.headimg:item.avatarUrl}}" class="icon-50 radius-50">
+    </image>
+
+    <view class="margin-left-20">
+      <view class="flex-row flex-center">
+        <view class="h5">{{item.name!=''?item.name:item.nickName}}</view>
+        <view class="label h7 margin-left-10">{{item.memberlevelname}}</view>
+      </view>
+
+      <view class="h7 margin-top-5">{{item.upmembertime_formatting}}</view>
+
+    </view>
+  </view>
+</block>
+<view class="text-center" wx:if="{{t0listfilter.length==0}}">
+  <image src="{{uploadpath}}resource/{{res.onrecord}}" class="norecord" />
+  <view class="h6 txt-gray">暂无数据</view>
+</view>
+
+<view style="height:130rpx"></view>

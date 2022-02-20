@@ -1,0 +1,5 @@
+/* pages/xuexiinfo/xuexiinfo.wxss */
+.img{
+  width: 100%;
+  height: 420rpx;
+}

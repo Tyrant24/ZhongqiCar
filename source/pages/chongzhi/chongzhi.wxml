@@ -1,0 +1,19 @@
+<!--pages/chongzhi/chongzhi.wxml-->
+<view class="padding-20">
+
+  <view class="block {{item.id==memberinfo.memberlevel_id?'active':''}} margin-bottom-20 " wx:for="{{memberlevel}}" wx:key="k">
+    <view class="flex-row flex-center">
+      <view class="txt-bold f-46 flex-1 kv">{{item.name}}{{item.id==memberinfo.memberlevel_id?"(当前)":""}}</view>
+      <view class="money txt-bold f-46 kc">￥ {{item.chargeamount}}</view>
+    </view>
+    <view class="flex-row flex-bottom">
+      <view class="flex-1">
+        <view class="h4-5 margin-top-10 hese kc">{{item.rentdesc}}</view>
+        <view class="h4-5 margin-top-5 hese kc">{{item.rentcomdesc}}</view>
+      </view>
+      <view class="label h4-5" bindtap="charge" data-id="{{item.id}}" wx:if="{{item.allowcharge_value=='Y'}}">立即充值</view>
+      <view class="label h4-5" bindtap="contactkefu" wx:if="{{item.allowcharge_value!='Y'}}">联系客服</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,50 @@
+<!--pages/dongtai/dongtai.wxml-->
+<swiper indicator-dots='true' autoplay='false' interval='5000' class="lunbo" duration='200' circular='true'>
+  <swiper-item wx:for="{{info.imglist}}" wx:key="k">
+    <image src='{{uploadpath}}fenxiangtu/{{item.img}}' class="img" mode="aspectFill" id="{{item.id}}"></image>
+  </swiper-item>
+</swiper>
+
+
+<view class="h4-5 txt-bold padding-20" style="padding-bottom:0">{{info.title}}</view>
+
+<view class="flex-row flex-center padding-20">
+  <image src="{{uploadpath}}fenxiang/{{info.touxiang}}" class="icon-25 radius-50"></image>
+
+  <view class="h6 margin-left-20 flex-1">{{info.name}}</view>
+
+  <view class="h6  ">{{info.fabudate}}</view>
+</view>
+
+<view class="padding-20 h6" style="white-space: pre-wrap;">{{info.content}}</view>
+
+
+
+<view style="height:130rpx"></view>
+<view class="under">
+
+  <view class="flex-row flex-row padding-20">
+
+    <view class="flex-row flex-center left" bindtap="dianzan">
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}resource/{{dianzan?res.zan:res.buzan}}" class="icon"></image>  
+      <view class="{{dianzan?'txt-red':''}} h4-5  margin-left-20" wx:if="{{number>0}}">{{number}}</view>
+      <view class="flex-1"></view>
+    </view>
+
+    <view class="flex-1"></view>
+
+    
+    <button class="clear-button" open-type="share">
+      <view class="flex-row flex-center right">
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}resource/{{res.zhuanfa}}" class="icon"></image>
+      <view class="txt-white h4-5 margin-left-20">转发</view>
+      <view class="flex-1"></view>
+    </view>
+    </button>
+   
+
+  </view>
+
+</view>

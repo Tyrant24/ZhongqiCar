@@ -1,0 +1,218 @@
+<!--pages/orderinfo/orderinfo.wxml-->
+
+<view class="bg-black padding-20">
+
+  <view class="text-center h4 txt-white txt-bold margin-top-60">{{chaoshi==true?'超时未支付':info.order_status_name}}</view>
+
+  <view class="flex-row flex-center margin-top" wx:if="{{info.order_status=='A'}}">
+    <view class="h7 txt-white">{{shengyu}}订单时间：{{info.ordertime}}</view>
+    <view class="flex-1"></view>
+    <view class="h7 txt-white">{{times}}</view>
+  </view>
+  <view style="height:50rpx" wx:if="{{info.order_status!='A'}}"></view>
+
+</view>
+
+<view class=" radius-10 bg-white margin-20 ">
+
+  <view class="flex-row flex-center padding border_white">
+    <view class="">
+      <view class="h6 txt-gray">取车时间</view>
+      <view class="h4-5 margin-top-5">{{info.quchedate}} {{info.weekone}}</view>
+      <view class="h6 margin-top-5 txt-gray">{{info.quchetime}}</view>
+    </view>
+    <view class=" flex-1"></view>
+    <view class="h6">共{{info.days}}天</view>
+    <view class=" flex-1"></view>
+    <view class="">
+      <view class="h6 txt-gray">还车时间</view>
+      <view class="h4-5 margin-top-5">{{info.huanche}} {{info.weektwo}}</view>
+      <view class="h6 margin-top-5 txt-gray">{{info.huanchetime}}</view>
+    </view>
+  </view>
+
+  <view class="">
+
+    <view class="flex-row flex-center padding-20">
+      <image src="{{uploadpath}}model/{{info.model_img}}" class="carimg" mode="aspectFit"></image>
+      <view class="margin-left-20 flex-1">
+        <view class="h6">{{info.model_name}}</view>
+        <view class="h7 margin-top-5" wx:if="{{info.model_type=='A'}}">跑车</view>
+        <view class="h7 margin-top-5" wx:if="{{info.model_type=='B'}}">轿车</view>
+        <view class="h7 margin-top-5" wx:if="{{info.model_type=='C'}}">SUV</view>
+        <view class="flex-row flex-center margin-top-20">
+          <!-- <view class="label2   h7  ">{{carinfo.zuowei}}座</view>
+        <view class="label2   h7 margin-left-10">{{carinfo.pailiang}}T</view>
+        <view class="label2  h7 margin-left-10">{{carinfo.qiyou}}</view> -->
+          <view class="label   h7  ">{{info.model_zuowei}}座</view>
+          <view class="label   h7 margin-left-10">{{info.model_pailiang}}T</view>
+          <view class="label  h7 margin-left-10">{{info.model_qiyou}}</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class="radius-10 bg-white margin-20 padding-20">
+
+  <view class="flex-row flex-center">
+
+
+  </view>
+
+  <view class="flex-row flex-center margin-top-20">
+    <image src="{{uploadpath}}resource/{{res.dizhi2}}" class="dizhi"></image>
+    <view class="margin-left-20 flex-1">
+      <view class="h6 txt-bold ">{{info.quche_name}}</view>
+      <!-- <view class="h6  margin-left-10"   >车行自取</view> -->
+      <view class="txt-gray h7 margin-top-10">{{info.address}}</view>
+    </view>
+
+    <view class="flex-row flex-column" bindtap='openMap' id="{{info.quche=='A'?info.address:instinfo.address}}">
+      <image src="{{uploadpath}}resource/{{res.daohang}}" class="daohang"></image>
+      <view class="h7">导航</view>
+    </view>
+  </view>
+
+</view>
+
+<view class="radius-10 bg-white margin-20 padding-20">
+
+  <view class="flex-row flex-center  ">
+    <view class="txt-red">*</view>
+    <view class="txt-bold h6" style="width:120rpx">联系人：</view>
+    <view class="h6">{{info.lianxiren}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-20">
+    <view class="txt-red">*</view>
+    <view class="txt-bold h6" style="width:120rpx">电 话：</view>
+    <view class="h6">{{info.phone}}</view>
+  </view>
+
+</view>
+
+
+
+<view class="radius-10 bg-white margin-20 padding-20">
+  <view class="h6 txt-bold">用车费用</view>
+  <view class="flex-row flex-center margin-top-10">
+    <view class="flex-1 h6">车辆租金</view>
+    <view class=" h6">￥{{info.zujin}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class="flex-1 h6">租车折扣</view>
+    <view class=" h6">{{memberinfo.memberlevel_rentrate}}%</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class=" h6">基础押金</view>
+    <view class="label2 margin-left-20">可退(取车时缴纳)</view>
+    <view class="label2 margin-left-20">可减免</view>
+    <view class="flex-1"></view>
+    <view class=" h6">￥{{info.jichuyajin}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class=" h6">违章押金</view>
+    <view class="label2 margin-left-20">可退(取车时缴纳)</view>
+    <view class="flex-1"></view>
+    <view class=" h6">￥{{info.weizhangyajin}}</view>
+  </view>
+
+  <view class="h6 txt-bold margin-top-20">租车保障</view>
+  <view class="flex-row flex-center margin-top-10">
+    <view class="flex-1 h6">人身及财务险</view>
+    <view class=" h6">￥{{info.baoxian}}</view>
+  </view>
+
+  <view class="h6 txt-bold margin-top-20">其他服务</view>
+  <view class="flex-row flex-center margin-top-10">
+    <view class="flex-1 h6">取/送车服务费</view>
+    <view class=" h6">￥{{info.qita}}</view>
+  </view>
+
+  <view class="flex-row flex-center margin-top-10">
+    <view class="flex-1 txt-bold h6">总计</view>
+    <view class=" h6">￥{{info.amount}}</view>
+  </view>
+
+  <view class="flex-row flex-column">
+    <view class="flex-row margin-top-20 "  bindtap="guize">
+      <view class="txt-gray h7">查看计费规则</view>
+      <image src="{{uploadpath}}resource/{{res.tishi}}" class="check margin-left-10"></image>
+    </view>
+  </view>
+
+</view>
+
+
+<view class="radius-10 bg-white margin-20 " wx:if="{{info.order_status=='A'}}">
+  <view class="flex-row flex-center padding-20" bindtap="zhifu" id="A">
+    <image src="{{uploadpath}}resource/{{res.weixin}}" class="weixin"></image>
+    <view class="h6 margin-left-10 flex-1">微信支付</view>
+    <image src="{{uploadpath}}resource/{{zhifu=='A'?res.xuan:res.buxuan}}" class="check"></image>
+  </view>
+
+  <view class="flex-row flex-center padding-20" bindtap="zhifu" id="B">
+    <image src="{{uploadpath}}resource/{{res.yue}}" class="yue"></image>
+    <view class="h6 margin-left-10 flex-1">余额支付</view>
+    <image src="{{uploadpath}}resource/{{zhifu=='B'?res.xuan:res.buxuan}}" class="check"></image>
+  </view>
+</view>
+
+<view style="height:200rpx"></view>
+
+<view class=" underblock bg-white  padding-bottom-20">
+
+  <view class="flex-row flex-center padding-20" wx:if="{{info.order_status=='A'}}">
+    <view class="flex-1" wx:if="{{chaoshi}}"></view>
+    <view class="quxiao txt-bold h4-5" bindtap="quxiao">取消订单</view>
+    <view class="flex-1"></view>
+    <view class="zhifu txt-bold txt-white h4-5" bindtap="fukuan" wx:if="{{!chaoshi}}">立即支付</view>
+  </view>
+
+  <view class="yaoqing margin-20 h4-5" wx:if="{{info.order_status=='B'||info.order_status=='C'}}" bindtap="navtoPage"
+    data-page="carinfo" data-param="id={{info.model_id}}">继续租车</view>
+  <view class="yaoqing margin-20 h4-5" wx:if="{{info.order_status=='D'||info.order_status=='E'}}" bindtap="navtoPage"
+    data-page="carinfo" data-param="id={{info.model_id}}">再次租车</view>
+
+
+</view>
+
+
+
+
+
+
+
+<view class="mask" animation="{{animationBgData}}" catchtouchmove="preventTouchMove" wx:if="{{showModalDlg}}"></view>
+
+<view class="modalDlg2" animation="{{animationData}}" catchtouchmove="preventTouchMove">
+
+  <view class="  padding-30" wx:if="{{showModalDlg}}">
+   
+    <view class="flex-row">
+      <view class="line"></view> 
+      <view class="txt-16 h6  flex-1 ">取/送车服务费:10:00-19:00，市内5元/公里19:00-次日10:00，市内10元/公里，市外请联系客服。</view> 
+    </view>
+
+    <view class="flex-row margin-top-20">
+      <view class="line"></view> 
+      <view class="txt-16 h6 flex-1 ">取消规则:订单支付成功后，距取车时间72小时内可以无偿取消订单，距取车时间72小时内将收取订单金额的一定比例作为违约金，到达取车时间即视为订单生成无法取消。 超跑体验:超跑一小时体验限制10公里，超出按照20元/公里收费。</view> 
+    </view>
+
+    <view class="flex-row margin-top-20">
+      <view class="line"></view> 
+      <view class="txt-16 h6   flex-1">超跑一小时体验限制10公里，超出按照10元/公里收费。</view> 
+    </view>
+   
+    <view class="flex-row flex-column margin-top">
+      <view class="queren h6" bindtap='close'>确定</view>
+    </view>
+  </view>
+
+</view>
